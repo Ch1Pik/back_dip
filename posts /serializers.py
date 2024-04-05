@@ -24,7 +24,7 @@ class PostSerializer(serializers.ModelSerializer):
         # Определение адреса по геогрфичеким координатам
         if representation["latitude"] is not None:
             geolocator = Nominatim(user_agent="social_network")
-            location = geolocator.reverse(f"{representation["latitude"]}, {representation["longtitude"]}")
+            location = geolocator.reverse(f'{representation["latitude"]}, {representation["longtitude"]}')
             representation["address"] = location.address
         return representation
 
